@@ -1,0 +1,38 @@
+.newsPage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .newsContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-row-gap: 30px;
+    grid-column-gap: 30px;
+
+    padding: 50px 0;
+
+    .card {
+      position: relative;
+      height: 500px;
+
+      a {
+        color: #1876d1;
+        text-decoration: none;
+      }
+
+      .links {
+        position: absolute;
+        bottom: 5px;
+
+        display: flex;
+        justify-content: space-between;
+
+        width: 100%;
+
+        padding: 0 30px 30px;
+      }
+    }
+  }
+  .downloadMoreButton {
+    margin-bottom: 100px;
+  }
+}

@@ -1,0 +1,12 @@
+.profilePage {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    margin: 40px;
+    font-size: 40px;
+    font-weight: 800;
+  }
+}

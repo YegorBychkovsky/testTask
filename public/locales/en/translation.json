@@ -1,0 +1,28 @@
+{
+  "siteName":"The BEST NEWS AGGREGATOR",
+  "logIn":"logIn",
+  "news":"News",
+  "home":"Home",
+  "profile":"Profile",
+  "mainPage":{
+    "h2top":"Log In if you are not",
+    "h2middle":"Get started ",
+    "h2bottom":"& search the news you are interested in"
+  },
+  "profilePage":{
+    "about":"We don't know anything about you, tell us about yourself!",
+    "logOf":"logOf",
+    "h1": "Your Profile"
+  },
+  "dialogPage":{
+    "message":"To login into this website, please enter your email address & password here. We will send updates occasionally.",
+    "userName":"Username",
+    "password":"Password",
+    "cancel":"cancel",
+    "subscribe":"subscribe"
+  },
+  "newsPage":{
+    "nextButton":"Next Page"
+  }
+
+}
