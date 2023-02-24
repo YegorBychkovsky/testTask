@@ -21,10 +21,10 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/" element={<MainLayout />}>
+      <Route path="/testTask" element={<MainLayout />}>
         <Route path="" element={<MainPage />} />
-        <Route path="/news" element={<NewsPage />} />
-        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/testTask/news" element={<NewsPage />} />
+        <Route path="/testTask/profile" element={<ProfilePage />} />
       </Route>
     </Routes>
   );
