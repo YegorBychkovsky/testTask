@@ -12,8 +12,6 @@ export const store = configureStore({
     latestNews,
     authorization,
     header,
-    // cart,
-    // pizza,
   },
 });
 
