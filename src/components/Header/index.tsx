@@ -23,7 +23,7 @@ import DialogWindow from '../DialogWindow';
 import { useTranslation } from 'react-i18next';
 import { changeLanguage, languageSelect } from '../../redux/slices/HeaderSlice';
 
-export const rightUsername = 'username';
+export const rightUsername = 'admin';
 export const rightPassword = '12345';
 
 const Header: React.FC = () => {
