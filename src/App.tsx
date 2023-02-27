@@ -17,8 +17,16 @@ function App() {
   username === rightUsername && password === rightPassword
     ? dispatch(changeLoginState(true))
     : dispatch(changeLoginState(false));
+  console.log(window.localStorage);
 
   return (
+    // <Routes>
+    //   <Route path="/" element={<MainLayout />}>
+    //     <Route path="" element={<MainPage />} />
+    //     <Route path="/news" element={<NewsPage />} />
+    //     <Route path="/profile" element={<ProfilePage />} />
+    //   </Route>
+    // </Routes>
     <Routes>
       <Route path="/testTask" element={<MainLayout />}>
         <Route path="" element={<MainPage />} />

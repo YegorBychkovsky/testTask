@@ -75,7 +75,7 @@ const Header: React.FC = () => {
         {login ? (
           <BottomNavigationAction
             label={t('profile')}
-            onClick={() => navigate('/profile')}
+            onClick={() => navigate('/testTask/profile')}
             icon={<PermIdentityIcon />}
           />
         ) : (
@@ -89,7 +89,7 @@ const Header: React.FC = () => {
         {login ? (
           <BottomNavigationAction
             label={t('news')}
-            onClick={() => navigate('/news')}
+            onClick={() => navigate('/testTask/news')}
             icon={<ArticleIcon />}
           />
         ) : (
