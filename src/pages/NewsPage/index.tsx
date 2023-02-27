@@ -68,7 +68,6 @@ const NewsPage = () => {
                 size="small"
                 onClick={() => {
                   deleteItemFunction(i);
-                  console.log(results);
                 }}>
                 Delete
               </Button>

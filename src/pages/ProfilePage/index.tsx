@@ -45,7 +45,6 @@ const ProfilePage = () => {
             onClick={() => {
               localStorage.removeItem('username');
               localStorage.removeItem('password');
-              console.log(window.localStorage);
               navigate('/');
             }}>
             {t('profilePage.logOf')}

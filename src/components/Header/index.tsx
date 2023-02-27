@@ -30,7 +30,7 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-  const language = useSelector(languageSelect);
+  const language = localStorage.getItem('i18nextLng');
   const login = useSelector(loginSelect);
   const value = useSelector(valueSelect);
 
@@ -42,8 +42,6 @@ const Header: React.FC = () => {
   const changeLanguageOfSite = React.useCallback((language: string) => {
     i18n.changeLanguage(language);
     dispatch(changeLanguage(language));
-    console.log(language);
-    console.log(i18n);
   }, []);
 
   const handleClickOpen = React.useCallback(() => {
@@ -54,9 +52,6 @@ const Header: React.FC = () => {
     username === rightUsername && password === rightPassword
       ? dispatch(changeLoginState(true))
       : dispatch(changeLoginState(false));
-    console.log(login);
-    console.log(username);
-    console.log(password);
   }, [username, password]);
 
   return (

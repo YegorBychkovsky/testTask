@@ -17,7 +17,6 @@ function App() {
   username === rightUsername && password === rightPassword
     ? dispatch(changeLoginState(true))
     : dispatch(changeLoginState(false));
-  console.log(window.localStorage);
 
   return (
     <Routes>
