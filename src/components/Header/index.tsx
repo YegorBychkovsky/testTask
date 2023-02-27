@@ -85,7 +85,6 @@ const Header: React.FC = () => {
             icon={<LoginIcon />}
           />
         )}
-
         {login ? (
           <BottomNavigationAction
             label={t('news')}

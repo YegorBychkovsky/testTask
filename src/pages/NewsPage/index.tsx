@@ -21,7 +21,7 @@ const NewsPage = () => {
 
   const { t } = useTranslation();
 
-  const language = useSelector(languageSelect);
+  const language = localStorage.getItem('i18nextLng');
   const results = useSelector(latestNewsResultsSelect);
   const news = useSelector(latestNewsSelect);
 
