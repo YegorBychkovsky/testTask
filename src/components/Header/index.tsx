@@ -42,6 +42,8 @@ const Header: React.FC = () => {
   const changeLanguageOfSite = React.useCallback((language: string) => {
     i18n.changeLanguage(language);
     dispatch(changeLanguage(language));
+    console.log(language);
+    console.log(i18n);
   }, []);
 
   const handleClickOpen = React.useCallback(() => {
@@ -53,6 +55,8 @@ const Header: React.FC = () => {
       ? dispatch(changeLoginState(true))
       : dispatch(changeLoginState(false));
     console.log(login);
+    console.log(username);
+    console.log(password);
   }, [username, password]);
 
   return (
@@ -64,7 +68,7 @@ const Header: React.FC = () => {
       }}>
       <div className={styles.logoBlock}>
         <img width={80} src={img} alt="" />
-        <h1>{t('siteName')}</h1>
+        <h1>{i18n.t('siteName')}</h1>
       </div>
       <BottomNavigation
         showLabels

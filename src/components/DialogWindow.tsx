@@ -40,6 +40,8 @@ const DialogWindow = () => {
 
   const inputSetPassword = React.useCallback((event: React.ChangeEvent<HTMLInputElement>) => {
     dispatch(addPassword(event.target.value));
+    console.log(password);
+    console.log(event.target.value);
   }, []);
 
   const handleClose = React.useCallback(() => {
@@ -57,7 +59,9 @@ const DialogWindow = () => {
       alert('username or password is incorrect');
     }
     dispatch(changeOpenState(false));
-  }, []);
+    console.log(username);
+    console.log(password);
+  }, [username, password]);
   return (
     <Dialog open={open} onClose={handleClose} aria-labelledby="form-dialog-title">
       <DialogTitle id="form-dialog-title">LogIn</DialogTitle>

@@ -21,12 +21,19 @@ function App() {
 
   return (
     <Routes>
-      <Route path="/testTask" element={<MainLayout />}>
+      <Route path="/" element={<MainLayout />}>
         <Route path="" element={<MainPage />} />
-        <Route path="/testTask/news" element={<NewsPage />} />
-        <Route path="/testTask/profile" element={<ProfilePage />} />
+        <Route path="/news" element={<NewsPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
       </Route>
     </Routes>
+    // <Routes>
+    //   <Route path="/testTask" element={<MainLayout />}>
+    //     <Route path="" element={<MainPage />} />
+    //     <Route path="/testTask/news" element={<NewsPage />} />
+    //     <Route path="/testTask/profile" element={<ProfilePage />} />
+    //   </Route>
+    // </Routes>
   );
 }
 
