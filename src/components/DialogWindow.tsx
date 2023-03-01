@@ -14,6 +14,7 @@ import {
   addFullName,
   addPassword,
   addUsername,
+  changeLoginState,
   changeOpenState,
   fetchingLogin,
   fetchingRegister,
@@ -86,10 +87,13 @@ const DialogWindow: React.FC = ({}) => {
   const handleLogIn = React.useCallback(() => {
     if (username === rightUsername && password === rightPassword) {
       alert('Welcome dear, Admin!');
+      localStorage.setItem('token', `token`);
+      localStorage.setItem('username', `admin`);
+      dispatch(changeLoginState(true));
+    } else {
+      const email = username;
+      appDispatch(fetchingLogin({ email, password }));
     }
-    const email = username;
-    appDispatch(fetchingLogin({ email, password }));
-
     dispatch(changeOpenState(false));
     navigate('/testTask/profile');
   }, [username, password]);

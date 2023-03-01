@@ -36,9 +36,7 @@ export const latestNewsSlice = createSlice({
     });
     builder.addCase(fetchingLatestNews.fulfilled, (state, action) => {
       state.fetchResponse = action.payload;
-
       state.news = action.payload.results;
-
       state.status = Status.SUCCESS;
     });
     builder.addCase(fetchingLatestNews.rejected, (state) => {
