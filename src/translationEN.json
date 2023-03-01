@@ -18,8 +18,11 @@
     "message":"To login into this website, please enter your email address & password here. We will send updates occasionally.",
     "userName":"Username",
     "password":"Password",
+    "fullName":"FullName",
     "cancel":"cancel",
-    "subscribe":"subscribe"
+    "subscribe":"subscribe",
+    "register":"register",
+    "logIn":"logIn"
   },
   "newsPage":{
     "nextButton":"Next Page"

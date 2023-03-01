@@ -11,17 +11,12 @@ import HomeIcon from '@mui/icons-material/Home';
 
 import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  addValue,
-  changeLoginState,
-  changeOpenState,
-  loginSelect,
-  valueSelect,
-} from '../../redux/slices/AuthorizationSlice/slice';
+import { addValue, changeOpenState } from '../../redux/slices/AuthorizationSlice/slice';
 import DialogWindow from '../DialogWindow';
 
 import { useTranslation } from 'react-i18next';
-import { changeLanguage, languageSelect } from '../../redux/slices/HeaderSlice';
+import { changeLanguage } from '../../redux/slices/HeaderSlice';
+import { loginSelect, valueSelect } from '../../redux/slices/AuthorizationSlice/exports';
 
 export const rightUsername = 'admin';
 export const rightPassword = '12345';
@@ -30,29 +25,22 @@ const Header: React.FC = () => {
   const navigate = useNavigate();
 
   const dispatch = useDispatch();
-  const language = localStorage.getItem('i18nextLng');
-  const login = useSelector(loginSelect);
-  const value = useSelector(valueSelect);
-
-  const username = localStorage.getItem('username');
-  const password = localStorage.getItem('password');
 
   const { t, i18n } = useTranslation();
+  const language = localStorage.getItem('i18nextLng');
+  const token = localStorage.getItem('token');
+
+  const value = useSelector(valueSelect);
+  const login = useSelector(loginSelect);
 
   const changeLanguageOfSite = React.useCallback((language: string) => {
     i18n.changeLanguage(language);
     dispatch(changeLanguage(language));
   }, []);
 
-  const handleClickOpen = React.useCallback(() => {
+  const handleClickLogin = React.useCallback(() => {
     dispatch(changeOpenState(true));
   }, []);
-
-  React.useEffect(() => {
-    username === rightUsername && password === rightPassword
-      ? dispatch(changeLoginState(true))
-      : dispatch(changeLoginState(false));
-  }, [username, password]);
 
   return (
     <Box
@@ -72,7 +60,7 @@ const Header: React.FC = () => {
         onChange={(event, newValue) => {
           dispatch(addValue(newValue));
         }}>
-        {login ? (
+        {login || token ? (
           <BottomNavigationAction
             label={t('profile')}
             onClick={() => navigate('/testTask/profile')}
@@ -81,11 +69,11 @@ const Header: React.FC = () => {
         ) : (
           <BottomNavigationAction
             label={t('logIn')}
-            onClick={handleClickOpen}
+            onClick={handleClickLogin}
             icon={<LoginIcon />}
           />
         )}
-        {login ? (
+        {login || token ? (
           <BottomNavigationAction
             label={t('news')}
             onClick={() => navigate('/testTask/news')}

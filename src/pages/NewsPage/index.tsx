@@ -11,7 +11,6 @@ import {
   fetchingLatestNews,
 } from '../../redux/slices/NewsPageSlice/slice';
 import { useAppDispatch } from '../../redux/store';
-import { languageSelect } from '../../redux/slices/HeaderSlice';
 
 import { useTranslation } from 'react-i18next';
 

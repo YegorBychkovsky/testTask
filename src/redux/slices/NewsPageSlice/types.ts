@@ -33,8 +33,6 @@ export type FetchLatestNews = {
 export interface LatestNewsState {
   fetchResponse?: FetchLatestNews;
   news?: LatestNewsResultsTypes[];
-
   number?: {}[];
-
   status: Status;
 }

@@ -9,8 +9,8 @@ import {
 } from '@mui/material';
 import styles from './ProfilePage.module.scss';
 import img from '../../assets/imgs/profile_pic.png';
-import { useSelector } from 'react-redux';
-import { usernameSelect } from '../../redux/slices/AuthorizationSlice/slice';
+import { useDispatch } from 'react-redux';
+import { changeLoginState } from '../../redux/slices/AuthorizationSlice/slice';
 import { useNavigate } from 'react-router-dom';
 
 import { useTranslation } from 'react-i18next';
@@ -18,9 +18,10 @@ import { useTranslation } from 'react-i18next';
 const ProfilePage = () => {
   const { t } = useTranslation();
 
+  const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const username = useSelector(usernameSelect);
+  const name = localStorage.getItem('username');
   return (
     <div className={styles.profilePage}>
       <h1>{t('profilePage.h1')}</h1>
@@ -30,7 +31,7 @@ const ProfilePage = () => {
           <CardMedia component="img" height="350" image={img} alt="green iguana" />
           <CardContent>
             <Typography gutterBottom variant="h5" component="div">
-              {username}
+              {name}
             </Typography>
             <Typography variant="body2" color="text.secondary">
               {t('profilePage.about')}
@@ -43,9 +44,9 @@ const ProfilePage = () => {
             size="large"
             color="primary"
             onClick={() => {
-              localStorage.removeItem('username');
-              localStorage.removeItem('password');
-              navigate('/');
+              localStorage.removeItem('token');
+              dispatch(changeLoginState(false));
+              navigate('/testTask');
             }}>
             {t('profilePage.logOf')}
           </Button>

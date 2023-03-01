@@ -6,16 +6,12 @@ import LoginIcon from '@mui/icons-material/Login';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  addValue,
-  changeOpenState,
-  loginSelect,
-  valueSelect,
-} from '../../redux/slices/AuthorizationSlice/slice';
+import { addValue, changeOpenState } from '../../redux/slices/AuthorizationSlice/slice';
 import DialogWindow from '../../components/DialogWindow';
 import { useNavigate } from 'react-router-dom';
 
 import { useTranslation } from 'react-i18next';
+import { valueSelect } from '../../redux/slices/AuthorizationSlice/exports';
 
 const MainPage = () => {
   const { t } = useTranslation();
@@ -23,8 +19,8 @@ const MainPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
+  const token = localStorage.getItem('token');
   const value = useSelector(valueSelect);
-  const login = useSelector(loginSelect);
 
   const handleClickOpen = React.useCallback(() => {
     dispatch(changeOpenState(true));
@@ -53,10 +49,10 @@ const MainPage = () => {
           onChange={(event, newValue) => {
             dispatch(addValue(newValue));
           }}>
-          {login ? (
+          {token ? (
             <BottomNavigationAction
               label={t('profile')}
-              onClick={() => navigate('/profile')}
+              onClick={() => navigate('/testTask/profile')}
               icon={<PermIdentityIcon />}
             />
           ) : (

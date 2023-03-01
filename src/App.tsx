@@ -19,13 +19,6 @@ function App() {
     : dispatch(changeLoginState(false));
 
   return (
-    // <Routes>
-    //   <Route path="/" element={<MainLayout />}>
-    //     <Route path="" element={<MainPage />} />
-    //     <Route path="/news" element={<NewsPage />} />
-    //     <Route path="/profile" element={<ProfilePage />} />
-    //   </Route>
-    // </Routes>
     <Routes>
       <Route path="/testTask" element={<MainLayout />}>
         <Route path="" element={<MainPage />} />
