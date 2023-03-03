@@ -52,3 +52,4 @@ export default latestNewsSlice.reducer;
 export const latestNewsResultsSelect = (state: RootState) => state.latestNews.news;
 export const latestNewsSelect = (state: RootState) => state.latestNews.fetchResponse;
 export const numberSelect = (state: RootState) => state.latestNews.number;
+export const statusSelect = (state: RootState) => state.latestNews.status;
